@@ -1,7 +1,7 @@
 shinyServer(
   function(input, output) {
     subGraph <- reactive({
-      minDays <- as.numeric(difftime(as.Date("2015-11-19"),input$timeSelection[2]))
+      blnDays <- as.numeric(difftime(as.Date("2015-11-19"),input$timeSelection[2]))
       maxDays <- as.numeric(difftime(as.Date("2015-11-19"),input$timeSelection[1]))
       
       subPeople <- subset(InfoFarmPeople, (numberOfDays >= minDays) & (numberOfDays <= maxDays))
